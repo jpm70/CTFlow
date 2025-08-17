@@ -1,0 +1,35 @@
+[
+  {
+    "title": "🔍 Reconocimiento",
+    "description": "Descubrir hosts, servicios y puertos abiertos.",
+    "resources": [
+      { "name": "nmap", "link": "https://nmap.org/book/man.html" },
+      { "name": "gobuster", "link": "https://github.com/OJ/gobuster" },
+      { "name": "HackTricks Recon", "link": "https://book.hacktricks.xyz/network-services-pentesting/pentesting-network" }
+    ]
+  },
+  {
+    "title": "🕵️ Análisis de Vulnerabilidades",
+    "description": "Buscar fallos en servicios y software detectado.",
+    "resources": [
+      { "name": "CVE MITRE", "link": "https://cve.mitre.org/" },
+      { "name": "Exploit-DB", "link": "https://www.exploit-db.com/" }
+    ]
+  },
+  {
+    "title": "💣 Explotación",
+    "description": "Ejecutar exploits y obtener acceso al sistema.",
+    "resources": [
+      { "name": "sqlmap", "link": "https://sqlmap.org/" },
+      { "name": "Metasploit", "link": "https://www.metasploit.com/" }
+    ]
+  },
+  {
+    "title": "🔑 Post-Explotación",
+    "description": "Escalar privilegios, pivoting y captura de flags.",
+    "resources": [
+      { "name": "GTFOBins", "link": "https://gtfobins.github.io/" },
+      { "name": "PayloadsAllTheThings", "link": "https://github.com/swisskyrepo/PayloadsAllTheThings" }
+    ]
+  }
+]
